@@ -1,0 +1,9 @@
+.PHONY:clean all
+CC = gcc
+CFLAGS = -Wall -g
+BIN = pipe01 simu_ls_wc copy_use_cat
+all:$(BIN)
+%.o:%.c
+	$(CC)  $(CFLAGS) -c $< -o $@
+clean:
+	rm -f *.o $(BIN)
